@@ -1,0 +1,1 @@
+{"systemOwnerName":"SENSEI09971 - STEFANO DAMBRA","ownerName":"684d7d70-33a4-4439-ac14-b46051aad4d6","processId":"04ec58fa-3dd1-441f-b72f-cba8868ba111","assetTypeName":"Software","assetName":"LL3 - LEASE FINANCE 3","state":"APPROVED","ownerId":"684d7d70-33a4-4439-ac14-b46051aad4d6","createdOn":1498579124926,"createdById":"65e452ed-eb86-46c4-a89c-fe9c6b911746"}
