@@ -4,7 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -13,7 +12,22 @@ import org.json.simple.parser.ParseException;
 
 public class Application {
 
-	public static void main(String[] args) {
+	public static void main(String[] args){
+
+		
+		try {
+			Dictionary.getJson();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		
+		
+		/*
+		 * 
+		
+		
 		@SuppressWarnings("resource")
 		Scanner reader = new Scanner(System.in);
 		int choice;
@@ -52,6 +66,9 @@ public class Application {
 
 		// Build JUnit
 		// runTests(ApplicationTest.class); -> useless
+		 * 
+		 * 
+		 */
 
 	}
 
