@@ -1,0 +1,1992 @@
+{
+    "header": {
+        "headerQuestions": [
+            {
+                "attrFieldId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                "name": "Tipologia Database",
+                "type": "Multivalue",
+                "multiValues": [
+                    "Altro",
+                    "DB2 Dipartimentale",
+                    "DB2 Host",
+                    "File system",
+                    "LDAP",
+                    "My SQL",
+                    "No DB",
+                    "Oracle",
+                    "SQL Server"
+                ],
+                "answers": [
+                    "Altro",
+                    "File system",
+                    "No DB"
+                ],
+                "tailoring": true,
+                "readOnly": false,
+                "singleValue": false
+            },
+            {
+                "attrFieldId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                "name": "Tipologia",
+                "type": "Multivalue",
+                "multiValues": [
+                    "DIPARTIMENTALE",
+                    "HOST"
+                ],
+                "answers": [
+                    "DIPARTIMENTALE"
+                ],
+                "tailoring": true,
+                "readOnly": false,
+                "singleValue": true
+            },
+            {
+                "attrFieldId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                "name": "Gestione",
+                "type": "Multivalue",
+                "multiValues": [
+                    "In-House",
+                    "Outsourcing"
+                ],
+                "answers": [
+                    "In-House"
+                ],
+                "tailoring": true,
+                "readOnly": false,
+                "singleValue": true
+            },
+            {
+                "attrFieldId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                "name": "Architettura",
+                "type": "Multivalue",
+                "multiValues": [
+                    "Altro",
+                    "Batch",
+                    "Citrix",
+                    "Client - server",
+                    "IMS-CICS",
+                    "Job",
+                    "Remote desktop",
+                    "Web application",
+                    "Web services"
+                ],
+                "answers": [
+                    "Altro"
+                ],
+                "tailoring": true,
+                "readOnly": false,
+                "singleValue": false
+            },
+            {
+                "attrFieldId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                "name": "Linguaggio sviluppo",
+                "type": "Multivalue",
+                "multiValues": [
+                    "Altro",
+                    "C++",
+                    "Cobol",
+                    "Java",
+                    "MS .Net",
+                    "Oracle Apex",
+                    "PHP",
+                    "Python",
+                    "Ruby"
+                ],
+                "answers": [
+                    "Altro"
+                ],
+                "tailoring": true,
+                "readOnly": false,
+                "singleValue": false
+            }
+        ],
+        "visibility": "R"
+    },
+    "body": {
+        "bodyQuestions": {
+            "processId": "260e9a6c-f5cb-477d-9d17-1789fdd8324f",
+            "state": "VALIDATED",
+            "createdOn": 1498134955722,
+            "createdById": "e8f996a7-4c46-4229-b7bd-dcc24635f6d2",
+            "createdByName": "ADMIN",
+            "ownerId": "6b6b3295-6dc1-49e2-94d0-992d6d64dc14",
+            "ownerName": "SENSEI09771 - FEDERICO MANGANIELLO",
+            "delegatedOn": null,
+            "delegatedUserId": null,
+            "delegatedUserName": null,
+            "systemOwnerId": "9bb0c74c-df96-41b7-8429-e1fec4f5dee0",
+            "systemOwnerName": "SENSEI09971 - STEFANO DAMBRA",
+            "assetId": "c66a8a8b-90aa-4f0c-a1fa-2923f4bb9c7c",
+            "assetName": "LL3 - LEASE FINANCE 3",
+            "probabilities": [
+                {
+                    "probabilityId": "eb6d5309-8bdb-4f0d-814b-9221179c2121",
+                    "typeId": "0524b009-1d3f-4707-97bf-3525989733f9",
+                    "typeName": "Software",
+                    "threatId": "8a5ade8c-327a-40b7-ae90-b808afb6f873",
+                    "threatName": "Abuso di privilegio",
+                    "probability": 1,
+                    "controls": [
+                        {
+                            "probabilityControlId": "399500f3-b592-476e-b85a-96e62cbd000b",
+                            "questionText": "Le funzionalità di tracciamento in file di log delle operazioni effettuate dagli utenti all'interno delle applicazioni, registrano almeno le seguenti informazioni:",
+                            "singleChoice": false,
+                            "noteMinValue": 50,
+                            "filterOperator": "NONE",
+                            "filterValues": [],
+                            "mitigations": [
+                                {
+                                    "counterMeasureId": "af2a2b6c-c9cb-4812-a28c-d13cf6ea720c",
+                                    "counterMeasureName": "Data e ora evento utente",
+                                    "mitigation": 0.05,
+                                    "application": 0
+                                },
+                                {
+                                    "counterMeasureId": "d3e8ce45-97de-447e-897f-166b4cff236d",
+                                    "counterMeasureName": "L'dentificativo univoco dell’utente (userid)",
+                                    "mitigation": 0.05,
+                                    "application": 0
+                                },
+                                {
+                                    "counterMeasureId": "c8e4729f-b858-49ab-aab4-e6e77f4e9e59",
+                                    "counterMeasureName": "I tentativi di accesso e disconnessione",
+                                    "mitigation": 0.03,
+                                    "application": 0
+                                },
+                                {
+                                    "counterMeasureId": "7e3fc101-af58-44e0-8e32-3366fa6bee82",
+                                    "counterMeasureName": "L'eventuale causa del fallimento dell’operazione",
+                                    "mitigation": 0.02,
+                                    "application": 0
+                                },
+                                {
+                                    "counterMeasureId": "74971921-1138-4bc7-bf62-23fc0b21299c",
+                                    "counterMeasureName": "La creazione, modifica e cancellazione di dati",
+                                    "mitigation": 0.04,
+                                    "application": 0
+                                },
+                                {
+                                    "counterMeasureId": "9305de16-559f-4790-b874-c3267761b0f0",
+                                    "counterMeasureName": "I dettagli concernenti l’operazione effettuata",
+                                    "mitigation": 0.03,
+                                    "application": 0
+                                }
+                            ]
+                        },
+                        {
+                            "probabilityControlId": "c35f1419-9070-4748-b926-a640d1459a99",
+                            "questionText": "Quali tipologie di file di log distinte vengono generate dall'applicazione?",
+                            "singleChoice": false,
+                            "noteMinValue": 50,
+                            "filterOperator": "NONE",
+                            "filterValues": [],
+                            "mitigations": [
+                                {
+                                    "counterMeasureId": "4076b86e-70e3-436a-bbe8-6db0dab048f4",
+                                    "counterMeasureName": "File per log comportamentali (operatività degli utenti)",
+                                    "mitigation": 0.07,
+                                    "application": 0
+                                },
+                                {
+                                    "counterMeasureId": "deb3661a-907e-41a8-81c2-c6bf9bd26be5",
+                                    "counterMeasureName": "File per log sistemistici",
+                                    "mitigation": 0.02,
+                                    "application": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "assetTypeName": "Software",
+            "applicationValues": "[{\"label\":\"0%\",\"key\":0},{\"label\":\"0% < IMPL = 25%\",\"key\":12.5},{\"label\":\"25% < IMPL  =  50%\",\"key\":37.5},{\"label\":\"50% < IMPL = 60%\",\"key\":55},{\"label\":\"60% < IMPL = 70%\",\"key\":65},{\"label\":\"70% < IMPL = 80%\",\"key\":75},{\"label\":\"80% < IMPL = 90%\",\"key\":85},{\"label\":\"90% < IMPL  = 99.99%\",\"key\":95},{\"label\":\"100%\",\"key\":99.99},{\"label\":\"N/A\",\"key\":-100}]",
+            "defaultMutualExclusiveAnswer": "Nessuna delle risposte seguenti"
+        },
+        "bodyAnswers": {
+            "threatResponses": [
+                {
+                    "countermeasures": [
+                        {
+                            "mitigation": 0.05,
+                            "application": 65,
+                            "note": "bla bla bla",
+                            "userName": "ADMIN - ADMIN ADMIN",
+                            "validationNote": "",
+                            "probabilityControlId": "399500f3-b592-476e-b85a-96e62cbd000b",
+                            "counterMeasureId": "af2a2b6c-c9cb-4812-a28c-d13cf6ea720c",
+                            "userId": "e8f996a7-4c46-4229-b7bd-dcc24635f6d2"
+                        },
+                        {
+                            "mitigation": 0.05,
+                            "application": 85,
+                            "note": "bla bla bla",
+                            "userName": "ADMIN - ADMIN ADMIN",
+                            "validationNote": "",
+                            "probabilityControlId": "399500f3-b592-476e-b85a-96e62cbd000b",
+                            "counterMeasureId": "d3e8ce45-97de-447e-897f-166b4cff236d",
+                            "userId": "e8f996a7-4c46-4229-b7bd-dcc24635f6d2"
+                        },
+                        {
+                            "mitigation": 0.03,
+                            "application": 37.5,
+                            "note": "bla bla bla",
+                            "userName": "ADMIN - ADMIN ADMIN",
+                            "validationNote": "",
+                            "probabilityControlId": "399500f3-b592-476e-b85a-96e62cbd000b",
+                            "counterMeasureId": "c8e4729f-b858-49ab-aab4-e6e77f4e9e59",
+                            "userId": "e8f996a7-4c46-4229-b7bd-dcc24635f6d2"
+                        },
+                        {
+                            "mitigation": 0.02,
+                            "application": 95,
+                            "note": "bla bla bla",
+                            "userName": "ADMIN - ADMIN ADMIN",
+                            "validationNote": "",
+                            "probabilityControlId": "399500f3-b592-476e-b85a-96e62cbd000b",
+                            "counterMeasureId": "7e3fc101-af58-44e0-8e32-3366fa6bee82",
+                            "userId": "e8f996a7-4c46-4229-b7bd-dcc24635f6d2"
+                        },
+                        {
+                            "mitigation": 0.04,
+                            "application": 37.5,
+                            "note": "bla bla bla",
+                            "userName": "ADMIN - ADMIN ADMIN",
+                            "validationNote": "",
+                            "probabilityControlId": "399500f3-b592-476e-b85a-96e62cbd000b",
+                            "counterMeasureId": "74971921-1138-4bc7-bf62-23fc0b21299c",
+                            "userId": "e8f996a7-4c46-4229-b7bd-dcc24635f6d2"
+                        },
+                        {
+                            "mitigation": 0.03,
+                            "application": 75,
+                            "note": "bla bla bla",
+                            "userName": "ADMIN - ADMIN ADMIN",
+                            "validationNote": "",
+                            "probabilityControlId": "399500f3-b592-476e-b85a-96e62cbd000b",
+                            "counterMeasureId": "9305de16-559f-4790-b874-c3267761b0f0",
+                            "userId": "e8f996a7-4c46-4229-b7bd-dcc24635f6d2"
+                        },
+                        {
+                            "mitigation": 0.07,
+                            "application": 37.5,
+                            "note": "bla bla bla ...",
+                            "userName": "ADMIN - ADMIN ADMIN",
+                            "validationNote": "",
+                            "probabilityControlId": "c35f1419-9070-4748-b926-a640d1459a99",
+                            "counterMeasureId": "4076b86e-70e3-436a-bbe8-6db0dab048f4",
+                            "userId": "e8f996a7-4c46-4229-b7bd-dcc24635f6d2"
+                        },
+                        {
+                            "mitigation": 0.02,
+                            "application": 75,
+                            "note": "bla bla bla",
+                            "userName": "ADMIN - ADMIN ADMIN",
+                            "validationNote": "",
+                            "probabilityControlId": "c35f1419-9070-4748-b926-a640d1459a99",
+                            "counterMeasureId": "deb3661a-907e-41a8-81c2-c6bf9bd26be5",
+                            "userId": "e8f996a7-4c46-4229-b7bd-dcc24635f6d2"
+                        }
+                    ],
+                    "probabilityId": "eb6d5309-8bdb-4f0d-814b-9221179c2121",
+                    "threatId": "8a5ade8c-327a-40b7-ae90-b808afb6f873"
+                }
+            ]
+        },
+        "visibility": "W"
+    },
+    "surveyLog": {
+        "logItems": [
+            {
+                "counterMeasureIncluded": true,
+                "mitigationName": "Data e ora evento utente",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "47713",
+                        "name": "Tipologia",
+                        "value": "HOST"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "47714",
+                        "name": "Gestione",
+                        "value": "Outsourcing"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "47712",
+                        "name": "Tipologia Database",
+                        "value": "LDAP"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "47711",
+                        "name": "Tipologia Database",
+                        "value": "SQL Server"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "47715",
+                        "name": "Architettura",
+                        "value": "Citrix"
+                    }
+                ],
+                "commonAttrs": [],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "NOT (47711)",
+                "note": "Espressione valida"
+            },
+            {
+                "counterMeasureIncluded": true,
+                "mitigationName": "L'dentificativo univoco dell’utente (userid)",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "34562",
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "34561",
+                        "name": "Tipologia Database",
+                        "value": "My SQL"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "34564",
+                        "name": "Architettura",
+                        "value": "Batch"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "34563",
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "34565",
+                        "name": "Architettura",
+                        "value": "Citrix"
+                    }
+                ],
+                "commonAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "34562",
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "34563",
+                        "name": "Gestione",
+                        "value": "In-House"
+                    }
+                ],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "",
+                "note": "Utilizzo della logica di OR"
+            },
+            {
+                "counterMeasureIncluded": false,
+                "mitigationName": "Le informazioni utili per identificare l’origine dell’evento utente (per esempio indirizzo IP o nome macchina)",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "123452",
+                        "name": "Tipologia",
+                        "value": "HOST"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "123454",
+                        "name": "Architettura",
+                        "value": "Batch"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "123451",
+                        "name": "Tipologia Database",
+                        "value": "SQL Server"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "123453",
+                        "name": "Gestione",
+                        "value": "In-House"
+                    }
+                ],
+                "commonAttrs": [
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "123453",
+                        "name": "Gestione",
+                        "value": "In-House"
+                    }
+                ],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "(123451 AND (123454 OR 123453)) OR (123452 AND (123451 OR 123454))",
+                "note": "Espressione valida"
+            },
+            {
+                "counterMeasureIncluded": true,
+                "mitigationName": "I tentativi di accesso e disconnessione",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "56782",
+                        "name": "Tipologia",
+                        "value": "HOST"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "56783",
+                        "name": "Gestione",
+                        "value": "Outsourcing"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "56784",
+                        "name": "Architettura",
+                        "value": "Batch"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "56781",
+                        "name": "Tipologia Database",
+                        "value": "SQL Server"
+                    }
+                ],
+                "commonAttrs": [],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "(NOT 56781)",
+                "note": "Espressione valida"
+            },
+            {
+                "counterMeasureIncluded": true,
+                "mitigationName": "L'eventuale causa del fallimento dell’operazione",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "698783",
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "698782",
+                        "name": "Tipologia Database",
+                        "value": "LDAP"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "698781",
+                        "name": "Tipologia Database",
+                        "value": "DB2 Host"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "698784",
+                        "name": "Architettura",
+                        "value": "Citrix"
+                    }
+                ],
+                "commonAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "698783",
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    }
+                ],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "",
+                "note": "Utilizzo della logica di OR"
+            },
+            {
+                "counterMeasureIncluded": true,
+                "mitigationName": "La creazione, modifica e cancellazione di dati",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "456782",
+                        "name": "Tipologia",
+                        "value": "HOST"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "456784",
+                        "name": "Architettura",
+                        "value": "Batch"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "456781",
+                        "name": "Tipologia Database",
+                        "value": "SQL Server"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "456783",
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "456785",
+                        "name": "Architettura",
+                        "value": "Citrix"
+                    }
+                ],
+                "commonAttrs": [
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "456783",
+                        "name": "Gestione",
+                        "value": "In-House"
+                    }
+                ],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "(NOT 456781 AND (456783 OR 456784))",
+                "note": "Espressione valida"
+            },
+            {
+                "counterMeasureIncluded": true,
+                "mitigationName": "I dettagli concernenti l’operazione effettuata",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "987452",
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "987453",
+                        "name": "Gestione",
+                        "value": "Outsourcing"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "987451",
+                        "name": "Tipologia Database",
+                        "value": "SQL Server"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "987454",
+                        "name": "Architettura",
+                        "value": "Citrix"
+                    }
+                ],
+                "commonAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "987452",
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    }
+                ],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "",
+                "note": "Utilizzo della logica di OR"
+            },
+            {
+                "counterMeasureIncluded": true,
+                "mitigationName": "File per log comportamentali (operatività degli utenti)",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "65452",
+                        "name": "Tipologia",
+                        "value": "HOST"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "65451",
+                        "name": "Tipologia Database",
+                        "value": "SQL Server"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "65453",
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "65454",
+                        "name": "Architettura",
+                        "value": "Citrix"
+                    }
+                ],
+                "commonAttrs": [
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "65453",
+                        "name": "Gestione",
+                        "value": "In-House"
+                    }
+                ],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "",
+                "note": "Utilizzo della logica di OR"
+            },
+            {
+                "counterMeasureIncluded": true,
+                "mitigationName": "File per log sistemistici",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "65452",
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "65453",
+                        "name": "Gestione",
+                        "value": "Outsourcing"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "65451",
+                        "name": "Tipologia Database",
+                        "value": "SQL Server"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "65454",
+                        "name": "Architettura",
+                        "value": "Citrix"
+                    }
+                ],
+                "commonAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "65452",
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    }
+                ],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "",
+                "note": "Utilizzo della logica di OR"
+            },
+            {
+                "counterMeasureIncluded": false,
+                "mitigationName": "File per log applicativi",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "65452",
+                        "name": "Tipologia",
+                        "value": "HOST"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "65453",
+                        "name": "Gestione",
+                        "value": "Outsourcing"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "65454",
+                        "name": "Architettura",
+                        "value": "Batch"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "65451",
+                        "name": "Tipologia Database",
+                        "value": "SQL Server"
+                    }
+                ],
+                "commonAttrs": [],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "",
+                "note": "Utilizzo della logica di OR"
+            },
+            {
+                "counterMeasureIncluded": false,
+                "mitigationName": "I profili abilitativi sono configurati nel rispetto del principio del minimo privilegio",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "123451",
+                        "name": "Tipologia",
+                        "value": "HOST"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "123452",
+                        "name": "Gestione",
+                        "value": "Outsourcing"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "123453",
+                        "name": "Architettura",
+                        "value": "Batch"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "123456",
+                        "name": "Tipologia Database",
+                        "value": "SQL Server"
+                    }
+                ],
+                "commonAttrs": [],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "",
+                "note": "Utilizzo della logica di OR"
+            },
+            {
+                "counterMeasureIncluded": false,
+                "mitigationName": "I profili abilitativi sono configurati nel rispetto della segregation of dutyes",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "7897",
+                        "name": "Tipologia",
+                        "value": "HOST"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "7896",
+                        "name": "Gestione",
+                        "value": "Outsourcing"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "7895",
+                        "name": "Architettura",
+                        "value": "Batch"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "7898",
+                        "name": "Tipologia Database",
+                        "value": "SQL Server"
+                    }
+                ],
+                "commonAttrs": [],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "",
+                "note": "Utilizzo della logica di OR"
+            },
+            {
+                "counterMeasureIncluded": false,
+                "mitigationName": "I profili abilitativi sono definiti in base al ruolo aziendale e alle mansioni da esso previste",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "123452",
+                        "name": "Tipologia",
+                        "value": "HOST"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "123453",
+                        "name": "Gestione",
+                        "value": "Outsourcing"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "123454",
+                        "name": "Architettura",
+                        "value": "Batch"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "123451",
+                        "name": "Tipologia Database",
+                        "value": "SQL Server"
+                    }
+                ],
+                "commonAttrs": [],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "",
+                "note": "Utilizzo della logica di OR"
+            },
+            {
+                "counterMeasureIncluded": false,
+                "mitigationName": "Tutte le richieste di change applicative e infrastrutturali (cambiamenti di configurazione, rilasci nuove release) sono tracciate, formalizzate e autorizzate prima di essere implementate nell'ambiente di produzione.",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "12342",
+                        "name": "Tipologia",
+                        "value": "HOST"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "12343",
+                        "name": "Gestione",
+                        "value": "Outsourcing"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "12344",
+                        "name": "Architettura",
+                        "value": "Batch"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "12341",
+                        "name": "Tipologia Database",
+                        "value": "SQL Server"
+                    }
+                ],
+                "commonAttrs": [],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "",
+                "note": "Utilizzo della logica di OR"
+            },
+            {
+                "counterMeasureIncluded": false,
+                "mitigationName": "La documentazione inerente l'architettura logica del sistema, l'ubicazione fisica degli elaboratori, le funzionalità erogate e le misure di sicurezza in essere sia adeguatamente formalizzata (sia da un punto di vista funzionale che tecnico) e costantemente aggiornata.",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "56872",
+                        "name": "Tipologia",
+                        "value": "HOST"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "56873",
+                        "name": "Gestione",
+                        "value": "Outsourcing"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "56874",
+                        "name": "Architettura",
+                        "value": "Batch"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "56871",
+                        "name": "Tipologia Database",
+                        "value": "SQL Server"
+                    }
+                ],
+                "commonAttrs": [],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "",
+                "note": "Utilizzo della logica di OR"
+            },
+            {
+                "counterMeasureIncluded": false,
+                "mitigationName": "Viene chiesta la validazione delle specifiche da parte dell'Utente Responsabile o suoi delegati",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "456782",
+                        "name": "Tipologia",
+                        "value": "HOST"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "456783",
+                        "name": "Gestione",
+                        "value": "Outsourcing"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "456784",
+                        "name": "Architettura",
+                        "value": "Batch"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "456781",
+                        "name": "Tipologia Database",
+                        "value": "SQL Server"
+                    }
+                ],
+                "commonAttrs": [],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "",
+                "note": "Utilizzo della logica di OR"
+            },
+            {
+                "counterMeasureIncluded": false,
+                "mitigationName": "Sono svolti test di accettazione funzionali da parte dell'Utente Responsabile o suoi delegati, o delle strutture aziendali individuate",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "1452",
+                        "name": "Tipologia",
+                        "value": "HOST"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "1453",
+                        "name": "Gestione",
+                        "value": "Outsourcing"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "1454",
+                        "name": "Architettura",
+                        "value": "Batch"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "1451",
+                        "name": "Tipologia Database",
+                        "value": "SQL Server"
+                    }
+                ],
+                "commonAttrs": [],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "",
+                "note": "Utilizzo della logica di OR"
+            },
+            {
+                "counterMeasureIncluded": false,
+                "mitigationName": "Standard per la configurazione sicura del software",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "123452",
+                        "name": "Tipologia",
+                        "value": "HOST"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "123453",
+                        "name": "Gestione",
+                        "value": "Outsourcing"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "123454",
+                        "name": "Architettura",
+                        "value": "Batch"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "123451",
+                        "name": "Tipologia Database",
+                        "value": "SQL Server"
+                    }
+                ],
+                "commonAttrs": [],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "",
+                "note": "Utilizzo della logica di OR"
+            },
+            {
+                "counterMeasureIncluded": false,
+                "mitigationName": "Restrizioni delle configurazioni software",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "1452",
+                        "name": "Tipologia",
+                        "value": "HOST"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "1453",
+                        "name": "Gestione",
+                        "value": "Outsourcing"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "1454",
+                        "name": "Architettura",
+                        "value": "Batch"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "1451",
+                        "name": "Tipologia Database",
+                        "value": "SQL Server"
+                    }
+                ],
+                "commonAttrs": [],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "",
+                "note": "Utilizzo della logica di OR"
+            },
+            {
+                "counterMeasureIncluded": false,
+                "mitigationName": "Attività di \"configuration review\" per la verifica di compatibilità delle impostazioni di configurazione",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "145122",
+                        "name": "Tipologia",
+                        "value": "HOST"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "145123",
+                        "name": "Gestione",
+                        "value": "Outsourcing"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "145124",
+                        "name": "Architettura",
+                        "value": "Batch"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "145121",
+                        "name": "Tipologia Database",
+                        "value": "SQL Server"
+                    }
+                ],
+                "commonAttrs": [],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "",
+                "note": "Utilizzo della logica di OR"
+            },
+            {
+                "counterMeasureIncluded": false,
+                "mitigationName": "Backup delle configurazioni",
+                "counterMeasureAttrs": [
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": "12332",
+                        "name": "Tipologia",
+                        "value": "HOST"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": "12333",
+                        "name": "Gestione",
+                        "value": "Outsourcing"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": "12334",
+                        "name": "Architettura",
+                        "value": "Batch"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": "12331",
+                        "name": "Tipologia Database",
+                        "value": "SQL Server"
+                    }
+                ],
+                "commonAttrs": [],
+                "assetAttrs": [
+                    {
+                        "attrId": "b4133889-c96b-4ec5-b9fb-80a089860133",
+                        "extRef": null,
+                        "name": "Linguaggio sviluppo",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "19842523-1fa9-4a5a-83c1-4e6797d37011",
+                        "extRef": null,
+                        "name": "Tipologia",
+                        "value": "DIPARTIMENTALE"
+                    },
+                    {
+                        "attrId": "a4c8f5d7-ac46-443f-a734-767fca3d5736",
+                        "extRef": null,
+                        "name": "Architettura",
+                        "value": "Altro"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "No DB"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "File system"
+                    },
+                    {
+                        "attrId": "6c79cf48-410e-403d-98bb-c35674a0fcab",
+                        "extRef": null,
+                        "name": "Gestione",
+                        "value": "In-House"
+                    },
+                    {
+                        "attrId": "9807dff0-df0b-4fb5-983b-bf4b58421a3d",
+                        "extRef": null,
+                        "name": "Tipologia Database",
+                        "value": "Altro"
+                    }
+                ],
+                "expression": "",
+                "note": "Utilizzo della logica di OR"
+            }
+        ],
+        "visibility": "R"
+    }
+}

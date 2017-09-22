@@ -3,6 +3,10 @@ package it.senseisrl.mitiga.survey;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
@@ -12,14 +16,14 @@ import it.senseisrl.mitiga.survey.util.GzipDecode;
 public class Dictionary {	
 	static String sURL = "curl 'http://192.168.88.166:9080/mitiga/processes/260e9a6c-f5cb-477d-9d17-1789fdd8324f/assessment-process-survey?editHeader=false' -H 'Accept-Encoding: gzip, deflate' -H 'Accept-Language: it-IT,it;q=0.8,en-US;q=0.6,en;q=0.4' -H 'User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36' -H 'Accept: application/json, text/plain, */*' -H 'Referer: http://192.168.88.166:9080/mitiga/webapp/' -H 'Cookie: triplesec.NG_TRANSLATE_LANG_KEY=it' -H 'Connection: keep-alive' -H 'iv-user: ADMIN' --compressed";
 	
-	public static void getJson() throws IOException {
+	public static JSONObject getJson() throws IOException {
 		OkHttpClient client = new OkHttpClient();
 		client.setReadTimeout(6, TimeUnit.SECONDS);
 
 		Request request = new Request.Builder()
 		  .url("http://192.168.88.166:9080/mitiga/processes/260e9a6c-f5cb-477d-9d17-1789fdd8324f/assessment-process-survey?editHeader=false")
 		  .get()
-		  .addHeader("accept-encoding", "gzip, deflate")
+		  //.addHeader("accept-encoding", "gzip, deflate")
 		  .addHeader("accept-language", "it-IT,it;q=0.8,en-US;q=0.6,en;q=0.4")
 		  .addHeader("user-agent", "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36")
 		  .addHeader("accept", "application/json, text/plain, */*")
@@ -34,8 +38,11 @@ public class Dictionary {
 		Response response = client.newCall(request).execute();
 		
 		String jsonData = response.body().string();
+		
+		//GZip DECOMPRESSION 
 		String decompResponse = null;
-		byte[] byteResponse = jsonData.getBytes();
+		byte[] byteResponse = response.body().string().getBytes();
+		
 		try {
 			 decompResponse = GzipDecode.decompress(byteResponse);
 		} catch (Exception e) {
@@ -43,10 +50,20 @@ public class Dictionary {
 		}
 		System.out.println("Response: " + decompResponse );
 		
+		// END DECOMPRESSION
+		
 		if(!response.isSuccessful())
 			System.out.println("Response Code: " + response.code());
 		else
-			System.out.println("Response Code: " + response.code() + "OK" + "\n" +
-															response.headers());
+			System.out.println("Response Code: " + response.code() + "OK" + "\n" + response.headers());
+		JSONParser parser = new JSONParser();
+		JSONObject jsonObject = null;
+		try {
+			jsonObject = (JSONObject) parser.parse(jsonData);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		return jsonObject;
 	}
 }

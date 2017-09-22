@@ -9,12 +9,12 @@ import junit.framework.TestCase;
  * @author Sensei
  *
  */
-/**
- *	 
+
+/**		Possible bad sequence 
  *   {@link #testCombination()}. 
- *   
- *   
- **/
+ *   {@link #testCombination2()}. 
+
+ *   **/
 public class CoinboxTest extends TestCase {
 	private Coinbox coinbox;
 
@@ -322,9 +322,20 @@ public class CoinboxTest extends TestCase {
 		coinbox.vend();
 		System.out.println("==> vend? " + coinbox.toString() + "\n");
 		
-
-
-		
 	}
+	
+	// lose money
+	public void testCombination2() {
+		System.out.println("testCombination2.STATUS ==> "  + coinbox.toString());
+		coinbox.addQtr(4);
+		System.out.println("testCombination2.STATUS ==> " + coinbox.toString());
+		coinbox.reset();
+		System.out.println("testCombination2.STATUS ==> RESET " + coinbox.toString());
+		coinbox.returnQtrs();	//deve abilitare
+		System.out.println("testCombination2.STATUS ==> RETURN " + coinbox.toString());
+		coinbox.vend(); 
+		System.out.println("testCombination2.STATUS ==> VEND " + coinbox.toString());		
+}
+
 
 } // END OF CLASS
