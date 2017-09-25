@@ -6,9 +6,17 @@ public class ApplicationAnswerType extends AnswerType {
 		
 	static String name_= "application";
 		
+	@SuppressWarnings("unchecked")
 	@Override
 	public void setDefault(JSONObject jsonObject) {
-		// set double mitigation ecc ecc
+		jsonObject.put("mitigation", 0);
+		jsonObject.put("application", 0);
+		jsonObject.put("note", "");
+		jsonObject.put("userName", "");
+		jsonObject.put("validationNote", "");
+		jsonObject.put("probabilityControlId", "");
+		jsonObject.put("counterMeasureId", "");
+		jsonObject.put("userId", "");
 	}
 	
 	@Override

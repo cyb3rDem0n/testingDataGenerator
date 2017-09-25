@@ -10,17 +10,40 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import it.senseisrl.mitiga.survey.plugin.AnswerType;
+import it.senseisrl.mitiga.survey.plugin.ApplicationAnswerType;
+
 public class Application {
 
 	public static void main(String[] args){
-
-		
+				
 		try {
-			Dictionary.getJson();
+						
+			JSONObject level_1 = Dictionary.getJson();
+				JSONObject level_2 =  (JSONObject) level_1.get("body");
+					JSONObject level_3 = (JSONObject) level_2.get("bodyAnswers");
+						JSONArray level_4 = (JSONArray) level_3.get("threatResponses");
+						for(int i = 0; i < level_4.size(); i ++) {
+							JSONObject jsonObject = (JSONObject) level_4.get(i);
+								JSONArray level_5 = (JSONArray) jsonObject.get("countermeasures");			
+									System.out.println(level_5.toString());
+										for(int j = 0; j < level_5.size(); j ++) {
+												JSONObject jsonToPlugin = (JSONObject) level_5.get(j);
+													AnswerType pluginIn = new ApplicationAnswerType();
+														pluginIn.setDefault(jsonToPlugin);
+															System.out.println(jsonToPlugin);
+
+										}
+
+						}
+							
+
+
+
+
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		
 
 		
 		/*
@@ -68,6 +91,32 @@ public class Application {
 		 * 
 		 * 
 		 */
+
+	}
+	
+	public static String readRespFromJson(JSONObject jsonObject) {
+		String cms = null;
+
+		try {
+
+			JSONArray valueList = (JSONArray) jsonObject.get("bodyAnswers");
+			for (Object object : valueList) {
+				JSONObject jsonObj = (JSONObject) object;
+				JSONArray sub_array = (JSONArray) jsonObj.get("threatResponses");
+				for (Object sub_object : sub_array) {
+					JSONObject sub_jsonObj = (JSONObject) sub_object;
+					JSONArray sub_sub_array = (JSONArray) sub_jsonObj.get("countermeasures");
+					for (Object sub_sub_object : sub_sub_array) {
+						JSONObject sub_sub_jsonObject = (JSONObject) sub_sub_object;
+						cms = ((String) sub_sub_jsonObject.toJSONString());
+					}
+				}
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return cms;
 
 	}
 
