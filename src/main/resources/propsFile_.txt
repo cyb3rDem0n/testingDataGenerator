@@ -1,0 +1,11 @@
+#Properties
+info=plugin_propertiesFile
+
+
+			 /* 	==>	Quando initPlugin viene richiamato con un properties come parametro,
+			 1. copia in ClassPath la stringa avente come chiave - plugin.+x - 
+			 2. passa la stringa classPath a create, il quale controlla a quale risposta corrisponde (a seconda del classPath) e crea il corrispondente figlio di tipo AnswerType
+			 3. il figlio, restituito dal PluginFactory tramite create,  viene salvato in plugin
+			 4. richiamo init sull AnsewrType di tipo X o Y 
+			 5. questo viene in fine inserito all'interno dell HashMap pluginStore_
+			 */

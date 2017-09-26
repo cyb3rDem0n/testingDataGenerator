@@ -10,91 +10,48 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import it.senseisrl.mitiga.survey.plugin.AnswerType;
-import it.senseisrl.mitiga.survey.plugin.ApplicationAnswerType;
-
 public class Application {
 
-	public static void main(String[] args){
-				
+	public static void main(String[] args) {
+
 		try {
-						
-			JSONObject level_1 = Dictionary.getJson();
-				JSONObject level_2 =  (JSONObject) level_1.get("body");
-					JSONObject level_3 = (JSONObject) level_2.get("bodyAnswers");
-						JSONArray level_4 = (JSONArray) level_3.get("threatResponses");
-						for(int i = 0; i < level_4.size(); i ++) {
-							JSONObject jsonObject = (JSONObject) level_4.get(i);
-								JSONArray level_5 = (JSONArray) jsonObject.get("countermeasures");			
-									System.out.println(level_5.toString());
-										for(int j = 0; j < level_5.size(); j ++) {
-												JSONObject jsonToPlugin = (JSONObject) level_5.get(j);
-													AnswerType pluginIn = new ApplicationAnswerType();
-														pluginIn.setDefault(jsonToPlugin);
-															System.out.println(jsonToPlugin);
-
-										}
-
-						}
-							
-
-
-
-
-		} catch (IOException e1) {
-			e1.printStackTrace();
+			System.out.println(ResponseReader.getJson(true));
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 
-		
 		/*
 		 * 
-		
-		
-		@SuppressWarnings("resource")
-		Scanner reader = new Scanner(System.in);
-		int choice;
-		
-		System.out
-				.println("APP \n" + "1: Generate json file \n" + "2: Get json info \n" + "3: Average \n" + "4: Mitigation Values");
-		choice = reader.nextInt();
-		if (choice == 1) {
-			System.out.println("Enter a integer value: ");
-			int intVal = reader.nextInt();
-			System.out.println("Enter a string value: ");
-			String stringVal = reader.next();
-		
-			try {
-				JsonModel.customJson(JsonModel.getJsonDetails(), intVal, stringVal);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			if (choice == 2) {
-				// JSOn Model
-				System.out.println(JsonModel.getJsonDetails().toString() + "\n");
-			}
-			if (choice == 3) {
-				// Average Probability
-				System.out.println("Average Probability is -> " + averageProbability());
-			}
-			if (choice == 4) {
-				// Mitigation Values
-				StringBuffer buffer_mitigations = new StringBuffer();
-				for (Double d : checkMitigationValues()) {
-					buffer_mitigations.append(d + "  ");
-				}
-				System.out.println("Mitigation Values -> " + buffer_mitigations);
-			}
-		}
-
-		// Build JUnit
-		// runTests(ApplicationTest.class); -> useless
+		 * 
+		 * 
+		 * @SuppressWarnings("resource") Scanner reader = new Scanner(System.in); int
+		 * choice;
+		 * 
+		 * System.out .println("APP \n" + "1: Generate json file \n" +
+		 * "2: Get json info \n" + "3: Average \n" + "4: Mitigation Values"); choice =
+		 * reader.nextInt(); if (choice == 1) {
+		 * System.out.println("Enter a integer value: "); int intVal = reader.nextInt();
+		 * System.out.println("Enter a string value: "); String stringVal =
+		 * reader.next();
+		 * 
+		 * try { JsonModel.customJson(JsonModel.getJsonDetails(), intVal, stringVal); }
+		 * catch (IOException e) { e.printStackTrace(); } if (choice == 2) { // JSOn
+		 * Model System.out.println(JsonModel.getJsonDetails().toString() + "\n"); } if
+		 * (choice == 3) { // Average Probability
+		 * System.out.println("Average Probability is -> " + averageProbability()); } if
+		 * (choice == 4) { // Mitigation Values StringBuffer buffer_mitigations = new
+		 * StringBuffer(); for (Double d : checkMitigationValues()) {
+		 * buffer_mitigations.append(d + "  "); }
+		 * System.out.println("Mitigation Values -> " + buffer_mitigations); } }
+		 * 
+		 * // Build JUnit // runTests(ApplicationTest.class); -> useless
 		 * 
 		 * 
 		 */
 
 	}
-	
-	public static String readRespFromJson(JSONObject jsonObject) {
+
+	public static String readResponseInfo(JSONObject jsonObject) {
 		String cms = null;
 
 		try {

@@ -21,8 +21,6 @@ public class PluginServiceTest {
 	
 	
 	public PluginServiceTest() {
-		
-		//  
 		service_ = new PluginService();
 	}
 	
@@ -30,6 +28,7 @@ public class PluginServiceTest {
 	@Before
 	public void setUp() throws Exception {
 		// init the plug-in list
+		// Property<Key,Value>
 		props_.setProperty("plugin.1", basePath + ".ApplicationAnswerType");
 		props_.setProperty("plugin.2", basePath + ".OtherAnswerType");
 		props_.setProperty("plugin.3", basePath + ".NotExistAnswerType");
@@ -45,7 +44,7 @@ public class PluginServiceTest {
 	@Test
 	public void testLoadPlugin() {
 		service_.initPlugins(props_);
-		assertTrue("No plugin was loaded ==>> "+ props_.size(), service_.count() > 0);
+		assertTrue("No plugin was loaded ==>> ", service_.count() > 0);
 	}
 
 
