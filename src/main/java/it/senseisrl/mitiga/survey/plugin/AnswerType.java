@@ -36,7 +36,6 @@ public abstract class AnswerType {
 			URL url = ClassLoader.getSystemResource("propsFile_.txt");
 			prop.load(url.openStream());
 			System.out.println(prop.getProperty("info"));
-
 		} catch (IOException ioe) { 
 			log_.log(Level.INFO, ioe.toString(), ioe);
 			;

@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -14,41 +15,23 @@ public class Application {
 
 	public static void main(String[] args) {
 
+		System.out.println(responseCreator());
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static JSONObject responseCreator() {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		JSONObject jsonObject =  new JSONObject();
+		
 		try {
-			System.out.println(ResponseReader.getJson(true));
+			map.put("jsonResp", ResponseReader.getJson(true));
+			
+			jsonObject.put("JSON", map);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-		/*
-		 * 
-		 * 
-		 * 
-		 * @SuppressWarnings("resource") Scanner reader = new Scanner(System.in); int
-		 * choice;
-		 * 
-		 * System.out .println("APP \n" + "1: Generate json file \n" +
-		 * "2: Get json info \n" + "3: Average \n" + "4: Mitigation Values"); choice =
-		 * reader.nextInt(); if (choice == 1) {
-		 * System.out.println("Enter a integer value: "); int intVal = reader.nextInt();
-		 * System.out.println("Enter a string value: "); String stringVal =
-		 * reader.next();
-		 * 
-		 * try { JsonModel.customJson(JsonModel.getJsonDetails(), intVal, stringVal); }
-		 * catch (IOException e) { e.printStackTrace(); } if (choice == 2) { // JSOn
-		 * Model System.out.println(JsonModel.getJsonDetails().toString() + "\n"); } if
-		 * (choice == 3) { // Average Probability
-		 * System.out.println("Average Probability is -> " + averageProbability()); } if
-		 * (choice == 4) { // Mitigation Values StringBuffer buffer_mitigations = new
-		 * StringBuffer(); for (Double d : checkMitigationValues()) {
-		 * buffer_mitigations.append(d + "  "); }
-		 * System.out.println("Mitigation Values -> " + buffer_mitigations); } }
-		 * 
-		 * // Build JUnit // runTests(ApplicationTest.class); -> useless
-		 * 
-		 * 
-		 */
-
+		
+		return jsonObject;
 	}
 
 	public static String readResponseInfo(JSONObject jsonObject) {

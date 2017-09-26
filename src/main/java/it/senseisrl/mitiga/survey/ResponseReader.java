@@ -68,7 +68,7 @@ public class ResponseReader {
 		JSONObject jsonObject = null;
 		try {
 			jsonObject = (JSONObject) parser.parse(jsonData);
-
+			
 			JSONObject level_2 = (JSONObject) jsonObject.get("body");
 			JSONObject level_3 = (JSONObject) level_2.get("bodyAnswers");
 			JSONArray level_4 = (JSONArray) level_3.get("threatResponses");

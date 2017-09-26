@@ -235,7 +235,9 @@ public class JsonModel {
 
 		// jsonObject.put("aray", jsonArray);
 
-		FileWriter file = new FileWriter("C://Developer//eclipse-workspace//testingDataGenerator//output.txt");
+// old		FileWriter file = new FileWriter("C://Developer//eclipse-workspace//testingDataGenerator//jsonOutput.txt");
+
+		FileWriter file = new FileWriter("C://Developer//eclipse-workspace//testingDataGenerator//src//main//jsonOutput.txt");
 
 		try {
 			file.write(jsonObject.toString());
