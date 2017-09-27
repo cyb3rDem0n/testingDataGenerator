@@ -1,5 +1,14 @@
 #Properties
-info=plugin_propertiesFile
+info=Properties File
+
+mitigation=0
+application=0
+userName=null
+validationNote=null
+probabilityControlId=null
+counterMeasureId=null
+userId=null
+
 
 
 			 /* 	==>	Quando initPlugin viene richiamato con un properties come parametro,

@@ -5,14 +5,14 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.Properties;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
+import org.apache.log4j.Logger;
 import org.json.simple.JSONObject;
 
 public abstract class AnswerType {
 	static String name_;
 	String propsFile_;
-	private final Logger log_ = Logger.getLogger(this.getClass().getName());
+	private final Logger log_ = Logger.getLogger(this.getClass().getName());	
 
 	/**
 	 * @param jsonObject
@@ -37,8 +37,8 @@ public abstract class AnswerType {
 			prop.load(url.openStream());
 			System.out.println(prop.getProperty("info"));
 		} catch (IOException ioe) { 
-			log_.log(Level.INFO, ioe.toString(), ioe);
-			;
+			log_.error(Level.INFO);
+			
 		}
 	}
 

@@ -9,8 +9,11 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import com.squareup.okhttp.Call;
+import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
 
 import it.senseisrl.mitiga.survey.plugin.AnswerType;
@@ -24,7 +27,7 @@ public class ResponseReader {
 	 * changed to default status. Else, will be shown the original response.
 	 * 
 	 * @return ArrayList <<code>JSONObject</code>>
-	 * @param setDefault 
+	 * @param setDefault
 	 */
 	public static ArrayList<JSONObject> getJson(boolean setDefault) throws IOException {
 		OkHttpClient client = new OkHttpClient();
@@ -41,10 +44,13 @@ public class ResponseReader {
 				.addHeader("referer", "http://192.168.88.166:9080/mitiga/webapp/")
 				.addHeader("cookie", "triplesec.NG_TRANSLATE_LANG_KEY=it").addHeader("connection", "keep-alive")
 				.addHeader("iv-user", "ADMIN").addHeader("cache-control", "no-cache")
-				.addHeader("postman-token", "3339f944-d0f9-3b12-1733-7ef9b132b9d9").build();
+				.addHeader("postman-token", "3339f944-d0f9-3b12-1733-7ef9b132b9d9")
+				.build();
 
 		Response response = client.newCall(request).execute();
+
 		String jsonData = response.body().string();
+		//System.out.println(jsonData);
 		JSONObject jsonToPlugin = null;
 		ArrayList<JSONObject> responseList = new ArrayList<>();
 
@@ -68,7 +74,7 @@ public class ResponseReader {
 		JSONObject jsonObject = null;
 		try {
 			jsonObject = (JSONObject) parser.parse(jsonData);
-			
+
 			JSONObject level_2 = (JSONObject) jsonObject.get("body");
 			JSONObject level_3 = (JSONObject) level_2.get("bodyAnswers");
 			JSONArray level_4 = (JSONArray) level_3.get("threatResponses");
@@ -95,5 +101,32 @@ public class ResponseReader {
 		}
 
 		return responseList;
+	}
+
+	public static void postJson(JSONObject jsonObject) throws IOException {
+		String json = jsonObject.toJSONString();
+		OkHttpClient client = new OkHttpClient();
+
+		RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json);
+
+		Request request = new Request.Builder().url(
+				"http://192.168.88.166:9080/mitiga/processes/260e9a6c-f5cb-477d-9d17-1789fdd8324f/assessment-process-survey?editHeader=false")
+				.post(body)
+				.addHeader("accept-encoding", "gzip, deflate")
+				.addHeader("accept-language", "it-IT,it;q=0.8,en-US;q=0.6,en;q=0.4")
+				.addHeader("user-agent",
+						"Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36")
+				.addHeader("accept", "application/json, text/plain, */*")
+				.addHeader("referer", "http://192.168.88.166:9080/mitiga/webapp/")
+				.addHeader("cookie", "triplesec.NG_TRANSLATE_LANG_KEY=it").addHeader("connection", "keep-alive")
+				.addHeader("iv-user", "ADMIN").addHeader("cache-control", "no-cache")
+				.addHeader("postman-token", "e8f996a7-4c46-4229-b7bd-dcc24635f6d2")
+				.build();
+
+		Call call = client.newCall(request);
+		Response response = call.execute();
+		System.out.println("Response Code: " + response.code() +
+				"\n" + response.message() +
+				"\n" + response.headers());
 	}
 }

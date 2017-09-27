@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -12,10 +14,16 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class Application {
+	private final static Logger log_ = Logger.getLogger(Application.class.getName());
 
 	public static void main(String[] args) {
 
-		System.out.println(responseCreator());
+		JSONObject jsonObject = responseCreator();
+		System.out.println(jsonObject);
+//		try {
+//			ResponseReader.postJson(jsonObject);
+//		} catch (IOException e) {
+//			e.printStackTrace();	}
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -27,8 +35,12 @@ public class Application {
 			map.put("jsonResp", ResponseReader.getJson(true));
 			
 			jsonObject.put("JSON", map);
+			jsonObject.put("header", "");
+			jsonObject.put("body", "");
+			jsonObject.put("surveyLog", "");
+
 		} catch (IOException e) {
-			e.printStackTrace();
+			log_.log(Level.WARNING, e.toString(), e);
 		}
 		
 		return jsonObject;
@@ -54,7 +66,7 @@ public class Application {
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			log_.log(Level.FINE, e.toString(), e);
 		}
 		return cms;
 
@@ -85,7 +97,7 @@ public class Application {
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			log_.log(Level.ALL, e.toString(), e);
 		}
 		return mitigations;
 

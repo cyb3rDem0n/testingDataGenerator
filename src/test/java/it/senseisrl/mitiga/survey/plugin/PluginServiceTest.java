@@ -4,27 +4,28 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Properties;
 
+import org.json.simple.JSONObject;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 public class PluginServiceTest {
-	
-	
-	final protected String basePath= "it.senseisrl.mitiga.survey.plugin"; 
-	
+
+	final protected String basePath = "it.senseisrl.mitiga.survey.plugin";
+
 	protected Properties props_ = new Properties();
-	
+	protected JSONObject jsonObject = new JSONObject();
+	AnswerType answerType;
+
 	// class to be tested
 	protected PluginService service_ = null;
-	
-	
-	
+
 	public PluginServiceTest() {
+		// viene invocato initPlugin nel costruttore
 		service_ = new PluginService();
 	}
-	
 
+	@SuppressWarnings("unchecked")
 	@Before
 	public void setUp() throws Exception {
 		// init the plug-in list
@@ -32,14 +33,24 @@ public class PluginServiceTest {
 		props_.setProperty("plugin.1", basePath + ".ApplicationAnswerType");
 		props_.setProperty("plugin.2", basePath + ".OtherAnswerType");
 		props_.setProperty("plugin.3", basePath + ".NotExistAnswerType");
-		props_.setProperty("plugin.4", basePath + ".NotExistAnswerType");
+		props_.setProperty("plugin.4", basePath + ".NotExistAnswerType2");
+
+		// put different info inside the json
+		jsonObject.put("attrFieldId", "");
+		jsonObject.put("name", "");
+		jsonObject.put("type", "");
+		jsonObject.put("tailoring", false);
+		jsonObject.put("readOnly", false);
+		jsonObject.put("singleValue", false);
+		// Array<String>
+		jsonObject.put("multiValues", null);
+		jsonObject.put("answers", null);
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		
-	}
 
+	}
 
 	@Test
 	public void testLoadPlugin() {
@@ -47,12 +58,22 @@ public class PluginServiceTest {
 		assertTrue("No plugin was loaded ==>> ", service_.count() > 0);
 	}
 
-
 	@Test
 	public void testResetPlugin() {
 		service_.resetPlugin();
 		assertTrue("Some plugins is already loaded", service_.count() == 0);
 	}
 
+	@Test
+	public void testGetPluginExists() {
+		AnswerType plugin = service_.getPlugin("plugin.1");
+		assertTrue("unable to find 'plugin.1' is " + plugin, plugin != null);
+	}
+
+	@Test
+	public void testGetPluginNotExists() {
+		AnswerType plugin = service_.getPlugin("plugin.3");
+		assertTrue("OK! 'plugin.3' doesn't exists", plugin == null);
+	}
 
 }
