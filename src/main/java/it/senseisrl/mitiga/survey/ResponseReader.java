@@ -20,8 +20,15 @@ import it.senseisrl.mitiga.survey.plugin.AnswerType;
 import it.senseisrl.mitiga.survey.plugin.ApplicationAnswerType;
 
 public class ResponseReader {
-	static String sURL = "curl 'http://192.168.88.166:9080/mitiga/processes/260e9a6c-f5cb-477d-9d17-1789fdd8324f/assessment-process-survey?editHeader=false' -H 'Accept-Encoding: gzip, deflate' -H 'Accept-Language: it-IT,it;q=0.8,en-US;q=0.6,en;q=0.4' -H 'User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36' -H 'Accept: application/json, text/plain, */*' -H 'Referer: http://192.168.88.166:9080/mitiga/webapp/' -H 'Cookie: triplesec.NG_TRANSLATE_LANG_KEY=it' -H 'Connection: keep-alive' -H 'iv-user: ADMIN' --compressed";
-
+	// static String sURL = "curl
+	// 'http://192.168.88.166:9080/mitiga/processes/260e9a6c-f5cb-477d-9d17-1789fdd8324f/assessment-process-survey?editHeader=false'
+	// -H 'Accept-Encoding: gzip, deflate' -H 'Accept-Language:
+	// it-IT,it;q=0.8,en-US;q=0.6,en;q=0.4' -H 'User-Agent: Mozilla/5.0 (Windows NT
+	// 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91
+	// Safari/537.36' -H 'Accept: application/json, text/plain, */*' -H 'Referer:
+	// http://192.168.88.166:9080/mitiga/webapp/' -H 'Cookie:
+	// triplesec.NG_TRANSLATE_LANG_KEY=it' -H 'Connection: keep-alive' -H 'iv-user:
+	// ADMIN' --compressed";
 	/**
 	 * If <code>setDefault</code> is true, all the json response values will be
 	 * changed to default status. Else, will be shown the original response.
@@ -44,13 +51,12 @@ public class ResponseReader {
 				.addHeader("referer", "http://192.168.88.166:9080/mitiga/webapp/")
 				.addHeader("cookie", "triplesec.NG_TRANSLATE_LANG_KEY=it").addHeader("connection", "keep-alive")
 				.addHeader("iv-user", "ADMIN").addHeader("cache-control", "no-cache")
-				.addHeader("postman-token", "3339f944-d0f9-3b12-1733-7ef9b132b9d9")
-				.build();
+				.addHeader("postman-token", "3339f944-d0f9-3b12-1733-7ef9b132b9d9").build();
 
 		Response response = client.newCall(request).execute();
 
 		String jsonData = response.body().string();
-		//System.out.println(jsonData);
+		// System.out.println(jsonData);
 		JSONObject jsonToPlugin = null;
 		ArrayList<JSONObject> responseList = new ArrayList<>();
 
@@ -75,16 +81,20 @@ public class ResponseReader {
 		try {
 			jsonObject = (JSONObject) parser.parse(jsonData);
 
-			JSONObject level_2 = (JSONObject) jsonObject.get("body");
-			JSONObject level_3 = (JSONObject) level_2.get("bodyAnswers");
-			JSONArray level_4 = (JSONArray) level_3.get("threatResponses");
+			// JSONObject level_1 = (JSONObject) jsonObject.get("header"); //
+			JSONObject level_2 = (JSONObject) jsonObject.get("body");//
+			JSONObject level_3 = (JSONObject) level_2.get("bodyAnswers");//
+			JSONArray level_4 = (JSONArray) level_3.get("threatResponses");//
+
 			for (int i = 0; i < level_4.size(); i++) {
-				JSONObject jsonObjectNext = (JSONObject) level_4.get(i);
+				JSONObject jsonObjectNext = (JSONObject) level_4.get(i);//
 				JSONArray level_5 = (JSONArray) jsonObjectNext.get("countermeasures");
 				// System.out.println(level_5.toString());
 				for (int j = 0; j < level_5.size(); j++) {
 					responseList.add((JSONObject) level_5.get(j));
+
 					jsonToPlugin = (JSONObject) level_5.get(j);
+
 					if (setDefault != false) {
 						answerType = new ApplicationAnswerType();
 						answerType.setDefault(jsonToPlugin);
@@ -103,16 +113,14 @@ public class ResponseReader {
 		return responseList;
 	}
 
-	public static void postJson(JSONObject jsonObject) throws IOException {
-		String json = jsonObject.toJSONString();
+	public static JSONObject toStringJSON() throws IOException {
 		OkHttpClient client = new OkHttpClient();
-
-		RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json);
+		client.setReadTimeout(6, TimeUnit.SECONDS);
 
 		Request request = new Request.Builder().url(
 				"http://192.168.88.166:9080/mitiga/processes/260e9a6c-f5cb-477d-9d17-1789fdd8324f/assessment-process-survey?editHeader=false")
-				.post(body)
-				.addHeader("accept-encoding", "gzip, deflate")
+				.get()
+				// .addHeader("accept-encoding", "gzip, deflate")
 				.addHeader("accept-language", "it-IT,it;q=0.8,en-US;q=0.6,en;q=0.4")
 				.addHeader("user-agent",
 						"Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36")
@@ -120,13 +128,49 @@ public class ResponseReader {
 				.addHeader("referer", "http://192.168.88.166:9080/mitiga/webapp/")
 				.addHeader("cookie", "triplesec.NG_TRANSLATE_LANG_KEY=it").addHeader("connection", "keep-alive")
 				.addHeader("iv-user", "ADMIN").addHeader("cache-control", "no-cache")
-				.addHeader("postman-token", "e8f996a7-4c46-4229-b7bd-dcc24635f6d2")
+				.addHeader("postman-token", "3339f944-d0f9-3b12-1733-7ef9b132b9d9").build();
+
+		Response response = client.newCall(request).execute();
+
+		String jsonData = response.body().string();
+		String responseString = jsonData.replaceAll("Hanno ucciso l'uomo ragno!!!", "BATMAN THE BEST");
+
+		if (!response.isSuccessful())
+			System.out.println("ERROR ==>> \n" + "Response Code: " + response.code());
+		else
+			System.out.println("Response Code: " + response.code() + "OK" + "\n" + response.headers());
+		
+		JSONParser parser = new JSONParser();
+		
+		JSONObject jsonObject = null;
+		
+			try {
+				jsonObject = (JSONObject) parser.parse(responseString);
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+
+		return jsonObject;
+	}
+
+	public static void postMethod(JSONObject editedJSON) throws IOException {
+		// String JSON = jsonObject.toJSONString();
+		OkHttpClient client = new OkHttpClient();
+
+		RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"),
+				editedJSON.toJSONString());
+
+		Request request = new Request.Builder()
+				.url("http://192.168.88.166:9080/mitiga/processes/260e9a6c-f5cb-477d-9d17-1789fdd8324f/validate")
+				.put(body)
+				.addHeader("accept-encoding", "gzip, deflate")
+				.addHeader("content-type", "application/json;charset=UTF-8")
+				.addHeader("accept", "application/json, text/plain, */*")
+				.addHeader("iv-user", "ADMIN")
 				.build();
 
 		Call call = client.newCall(request);
 		Response response = call.execute();
-		System.out.println("Response Code: " + response.code() +
-				"\n" + response.message() +
-				"\n" + response.headers());
+		System.out.println("Response Code: " + response.code() + "\n" + response.message() + "\n" + response.headers());
 	}
 }

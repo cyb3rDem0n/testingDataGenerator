@@ -4,14 +4,13 @@ import org.json.simple.JSONObject;
 
 public class ApplicationAnswerType extends AnswerType {
 		
-	static String name_= "application";
+	static String name_= "ApplicationAnswerType";
 		
-	@SuppressWarnings("unchecked")
 	@Override
 	public void setDefault(JSONObject jsonObject) {
 		jsonObject.put("mitigation", 0);
 		jsonObject.put("application", 0);
-		jsonObject.put("note", "");
+		jsonObject.put("note", "E' MEGLIO BATMAN");
 		jsonObject.put("userName", "");
 		jsonObject.put("validationNote", "");
 		jsonObject.put("probabilityControlId", "");

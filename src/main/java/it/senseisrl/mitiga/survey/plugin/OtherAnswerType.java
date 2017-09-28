@@ -3,9 +3,8 @@ package it.senseisrl.mitiga.survey.plugin;
 import org.json.simple.JSONObject;
 
 public class OtherAnswerType extends AnswerType {
-	static String name_="other";
+	static String name_="OtherAnswerType";
 	
-	@SuppressWarnings("unchecked")
 	@Override
 	public void setDefault(JSONObject jsonObject) {
 		jsonObject.put("attrFieldId", "");

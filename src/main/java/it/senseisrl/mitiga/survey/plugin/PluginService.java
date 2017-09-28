@@ -1,7 +1,6 @@
 package it.senseisrl.mitiga.survey.plugin;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Properties;
 
 import org.apache.log4j.Level;
@@ -29,29 +28,28 @@ public class PluginService {
 	public void initPlugins(Properties prp) {
 
 		String classPath = "";
-		AnswerType plugin = null;
+		AnswerType answerType = null;
 
 		// read the list
 
 		if (prp.size() > 0) {
 
-			for (int i = 0; i < prp.size(); i++) {
+			for (int i = 1; i < prp.size(); i++) {
 
-				// assegno il classPath avente la chiave corrispondente
-				// Properties in ingresso avrà una sua dimensione
-
-				classPath = prp.getProperty("plugin." + 1);
-
+				// prendo il classPath legato alla key "plugin + i"
+				classPath = prp.getProperty("plugin." + i);
+				
 				if (!classPath.equals(null)) {
-					plugin = PluginFactory.create(classPath);
+					answerType = PluginFactory.create(classPath);
 				} else
 					log_.error(Level.WARN);
 
 				// ... and for eachOne
 
-				if (plugin != null) {
-					plugin.init();
-					pluginStore_.put(plugin.getName(), plugin);
+				if (answerType != null) {
+					answerType.init();
+					//String key = pluginStore_.get("plugin."+i);
+					pluginStore_.put("plugin."+i, answerType);
 				} else {
 					// if plugin is null, classPath doesn't exist
 					log_.error(Level.WARN);
@@ -64,11 +62,10 @@ public class PluginService {
 	} // --- loadPlugins() ---
 
 	public void resetPlugin() {
-		if (pluginStore_.isEmpty() == false) {
-			for (Iterator<?> it = pluginStore_.entrySet().iterator(); it.hasNext();) {
-				pluginStore_.remove(it.next());
-			}
-		}
+		if (pluginStore_.size() != 0) {
+			pluginStore_.clear();
+		}else
+			System.out.println("Empty HashMap");
 	}
 
 	public int count() {

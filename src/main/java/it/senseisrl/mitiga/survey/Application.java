@@ -17,13 +17,15 @@ public class Application {
 	private final static Logger log_ = Logger.getLogger(Application.class.getName());
 
 	public static void main(String[] args) {
-
-		JSONObject jsonObject = responseCreator();
-		System.out.println(jsonObject);
-//		try {
-//			ResponseReader.postJson(jsonObject);
-//		} catch (IOException e) {
-//			e.printStackTrace();	}
+		JSONObject editedResponse;
+		
+		try {
+			editedResponse = ResponseReader.toStringJSON();
+			System.out.println(editedResponse);
+			ResponseReader.postMethod(editedResponse);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -33,11 +35,7 @@ public class Application {
 		
 		try {
 			map.put("jsonResp", ResponseReader.getJson(true));
-			
 			jsonObject.put("JSON", map);
-			jsonObject.put("header", "");
-			jsonObject.put("body", "");
-			jsonObject.put("surveyLog", "");
 
 		} catch (IOException e) {
 			log_.log(Level.WARNING, e.toString(), e);
