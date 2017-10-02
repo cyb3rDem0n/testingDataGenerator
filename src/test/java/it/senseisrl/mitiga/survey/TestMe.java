@@ -2,6 +2,7 @@ package it.senseisrl.mitiga.survey;
 
 import org.junit.Test;
 
+import it.senseisrl.mitiga.survey.json.JsonModel;
 import junit.framework.TestCase;
 
 public class TestMe extends TestCase{

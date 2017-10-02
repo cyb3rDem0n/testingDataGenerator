@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="23" failures="0" name="it.senseisrl.mitiga.survey.CoinboxTest" time="0.1" errors="0" skipped="0">
+<testsuite tests="23" failures="0" name="it.senseisrl.mitiga.survey.CoinboxTest" time="0.078" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -65,27 +65,27 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testCombination2" time="0.016"/>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testSevenCoins" time="0.001"/>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testThreeCoins" time="0.001"/>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testTwoCoins" time="0.001"/>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testOneCoin" time="0.002"/>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testSixCoins2" time="0.002"/>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testMod" time="0.006"/>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testCombination" time="0.015"/>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testCollectedCoins" time="0.01"/>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testThreeCoins2" time="0.002"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testCombination2" time="0.015"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testSevenCoins" time="0"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testThreeCoins" time="0"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testTwoCoins" time="0"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testOneCoin" time="0"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testSixCoins2" time="0"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testMod" time="0"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testCombination" time="0.016"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testCollectedCoins" time="0.016"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testThreeCoins2" time="0"/>
   <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testFiveCoins" time="0"/>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testDifferentInputSequence" time="0.016"/>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testTwoCoins2" time="0.003"/>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testTwoCoins3" time="0.002"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testDifferentInputSequence" time="0.015"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testTwoCoins2" time="0"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testTwoCoins3" time="0"/>
   <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testEightCoins" time="0"/>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testReturnQtrs" time="0.002"/>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testSequence2Coins" time="0.003"/>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testFiveCoins2" time="0.003"/>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testFourCoins" time="0.001"/>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testSequenceCoins" time="0.002"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testReturnQtrs" time="0"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testSequence2Coins" time="0"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testFiveCoins2" time="0"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testFourCoins" time="0"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testSequenceCoins" time="0.016"/>
   <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testSixCoins" time="0"/>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testReturnQtrs2" time="0.01"/>
-  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testReturnQtrs3" time="0.002"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testReturnQtrs2" time="0"/>
+  <testcase classname="it.senseisrl.mitiga.survey.CoinboxTest" name="testReturnQtrs3" time="0"/>
 </testsuite>

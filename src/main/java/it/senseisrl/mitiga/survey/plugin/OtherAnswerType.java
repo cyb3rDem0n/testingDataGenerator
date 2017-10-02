@@ -1,25 +1,30 @@
 package it.senseisrl.mitiga.survey.plugin;
 
-import org.json.simple.JSONObject;
+import java.util.HashMap;
+
+import it.senseisrl.mitiga.survey.countermeasure.Countermeasure;
 
 public class OtherAnswerType extends AnswerType {
 	static String name_="OtherAnswerType";
-	
-	@Override
-	public void setDefault(JSONObject jsonObject) {
-		jsonObject.put("attrFieldId", "");
-		jsonObject.put("name", "");
-		jsonObject.put("type", "");
-		jsonObject.put("tailoring", false);
-		jsonObject.put("readOnly", false);
-		jsonObject.put("singleValue", false);
-		// Array<String>
-		jsonObject.put("multiValues", null);
-		jsonObject.put("answers", null);
-	}
+
 	@Override
 	public void init() {
 		super.init();
+	}
+	@Override
+	public void setDefault(HashMap<Integer, Countermeasure> hashMap) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void preciseSetValue(HashMap<String, Countermeasure> hashMap, String key, String setValue) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void searchNote(String valueToSearch) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

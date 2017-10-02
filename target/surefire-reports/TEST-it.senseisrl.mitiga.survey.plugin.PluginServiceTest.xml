@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="it.senseisrl.mitiga.survey.plugin.PluginServiceTest" time="0.022" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="it.senseisrl.mitiga.survey.plugin.PluginServiceTest" time="0.031" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -65,9 +65,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="it.senseisrl.mitiga.survey.plugin.PluginServiceTest" name="testGetPluginExists" time="0.009"/>
-  <testcase classname="it.senseisrl.mitiga.survey.plugin.PluginServiceTest" name="testResetPlugin" time="0.002"/>
-  <testcase classname="it.senseisrl.mitiga.survey.plugin.PluginServiceTest" name="testLoadPlugin" time="0.008"/>
-  <testcase classname="it.senseisrl.mitiga.survey.plugin.PluginServiceTest" name="testGetPluginNotExists" time="0.001"/>
-  <testcase classname="it.senseisrl.mitiga.survey.plugin.PluginServiceTest" name="testGetPluginExists2" time="0.002"/>
+  <testcase classname="it.senseisrl.mitiga.survey.plugin.PluginServiceTest" name="testGetPluginExists" time="0.015"/>
+  <testcase classname="it.senseisrl.mitiga.survey.plugin.PluginServiceTest" name="testResetPlugin" time="0"/>
+  <testcase classname="it.senseisrl.mitiga.survey.plugin.PluginServiceTest" name="testLoadPlugin" time="0.016"/>
+  <testcase classname="it.senseisrl.mitiga.survey.plugin.PluginServiceTest" name="testGetPluginNotExists" time="0"/>
+  <testcase classname="it.senseisrl.mitiga.survey.plugin.PluginServiceTest" name="testGetPluginExists2" time="0"/>
 </testsuite>

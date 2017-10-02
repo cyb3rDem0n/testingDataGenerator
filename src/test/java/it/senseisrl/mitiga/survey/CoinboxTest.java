@@ -1,8 +1,6 @@
-/**
- * 
- */
 package it.senseisrl.mitiga.survey;
 
+import it.senseisrl.mitiga.survey.coinbox.Coinbox;
 import junit.framework.TestCase;
 
 /**

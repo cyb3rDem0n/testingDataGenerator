@@ -13,34 +13,44 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import com.mashape.unirest.http.exceptions.UnirestException;
+
+import it.senseisrl.mitiga.survey.countermeasure.CountermeasureBuilder;
+import it.senseisrl.mitiga.survey.json.ResponseReader;
+import it.senseisrl.mitiga.survey.plugin.AnswerType;
+import it.senseisrl.mitiga.survey.plugin.ApplicationAnswerType;
+
 public class Application {
 	private final static Logger log_ = Logger.getLogger(Application.class.getName());
 
-	public static void main(String[] args) {
-		JSONObject editedResponse;
-		
-		try {
-			editedResponse = ResponseReader.toStringJSON();
-			System.out.println(editedResponse);
-			ResponseReader.postMethod(editedResponse);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	@SuppressWarnings("unchecked")
-	public static JSONObject responseCreator() {
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		JSONObject jsonObject =  new JSONObject();
-		
-		try {
-			map.put("jsonResp", ResponseReader.getJson(true));
-			jsonObject.put("JSON", map);
+	public static void main(String[] args) throws IOException, UnirestException {
 
+		
+		CountermeasureBuilder.streamReader();
+		
+//		AnswerType type = new ApplicationAnswerType();
+//		type.searchNote("BATMAN");
+//		type.setDefault(CountermeasureBuilder.jsonManage());
+
+	}
+
+	@SuppressWarnings("unchecked")
+	public static JSONObject responseBuilder() {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		JSONObject jsonObject = new JSONObject();
+
+		try {
+
+			map.put("threatResponses", ResponseReader.getJson(true));
+
+			jsonObject.put("surveyAnswers", map);
+			jsonObject.put("processState", "VALIDATED");
+			jsonObject.put("systemOwner", "false");
+			jsonObject.put("header", "null");
 		} catch (IOException e) {
 			log_.log(Level.WARNING, e.toString(), e);
 		}
-		
+
 		return jsonObject;
 	}
 
