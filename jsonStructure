@@ -1,0 +1,15 @@
+{
+"header": {
+ "headerQuestions": [{...
+ "visibility": "R"
+ },
+"body": {
+ "bodyQuestions": {...
+ "bodyAnswers": {
+ "visibility": "W"
+ },
+"surveyLog": {
+ "logItems": [{...
+ "visibility": "R"
+ }
+}

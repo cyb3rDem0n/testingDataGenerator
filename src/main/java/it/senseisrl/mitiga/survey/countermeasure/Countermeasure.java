@@ -7,7 +7,7 @@ package it.senseisrl.mitiga.survey.countermeasure;
  * @author Giuseppe D'Agostino
  */
 
-public class Countermeasure {
+public class Countermeasure extends Body {
 
 	private String mitigation;
 	private String application;
@@ -100,13 +100,13 @@ public class Countermeasure {
 	@Override
     public String toString() {
         return  "\n ==>> Countermeasure: " +
-                "\n ==>> mitigation=" + getMitigation() +
-                "\n ==>> application=" + getApplication() +
-                "\n ==>> note='" + getNote() +
-                "\n ==>> userName=" + getUserName() +
-                "\n ==>> validationNote=" + getValidationNote() +
-                "\n ==>> probabilityControlId=" + getProbabilityControlId() +
-                "\n ==>> counterMeasureId='" + getCounterMeasureId() +
+                "\n ==>> mitigation=" + mitigation +
+                "\n ==>> application=" + application +
+                "\n ==>> note='" + note +
+                "\n ==>> userName=" + userName +
+                "\n ==>> validationNote=" + validationNote +
+                "\n ==>> probabilityControlId=" + probabilityControlId +
+                "\n ==>> counterMeasureId='" + counterMeasureId +
                 "\n ==>> userId=" + userId + " \n";
     }
 	
